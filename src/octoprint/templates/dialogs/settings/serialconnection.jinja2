@@ -14,19 +14,19 @@
         <div id="settings_serial_general" class="tab-pane active">
             <fieldset id="settings_serial_general_connection">
                 <legend>{{ _('Connection') }}</legend>
-                <div class="control-group" title="{{ _('Serial port to connect to, setting this to AUTO will make OctoPrint try to automatically find the right setting')|edq }}">
+                <div class="control-group" title="{{ _('Serial port to connect to, setting this to AUTO will make 3D Quanter try to automatically find the right setting')|edq }}">
                     <label class="control-label" for="settings-serialPort">{{ _('Serial Port') }}</label>
                     <div class="controls">
                         <select id="settings-serialPort" data-bind="options: serial_portOptions, optionsCaption: 'AUTO', value: serial_port"></select>
                     </div>
                 </div>
-                <div class="control-group" title="{{ _('Serial baud rate to connect with, setting this to AUTO will make OctoPrint try to automatically find the right setting')|edq }}">
+                <div class="control-group" title="{{ _('Serial baud rate to connect with, setting this to AUTO will make 3D Quanter try to automatically find the right setting')|edq }}">
                     <label class="control-label" for="settings-baudrate">{{ _('Baudrate') }}</label>
                     <div class="controls">
                         <select id="settings-baudrate" data-bind="options: serial_baudrateOptions, optionsCaption: 'AUTO', value: serial_baudrate"></select>
                     </div>
                 </div>
-                <div class="control-group" title="{{ _('Makes OctoPrint try to connect to the printer automatically during start up')|edq }}">
+                <div class="control-group" title="{{ _('Makes 3D Quanter try to connect to the printer automatically during start up')|edq }}">
                     <div class="controls">
                         <label class="checkbox">
                             <input type="checkbox" data-bind="checked: serial_autoconnect" id="settings-serialAutoconnect"> {{ _('Auto-connect to printer on server start') }}
@@ -99,7 +99,7 @@
                             <div class="controls">
                                 <label class="checkbox">
                                     <input type="checkbox" data-bind="checked: serial_ignoreEmptyPorts" id="settings-serialIgnoreEmptyPorts"> {{ _('Ignore empty ports') }}
-                                    <span class="help-block">{{ _('By checking this you\'ll disable OctoPrint warning you if no serial ports to connect to were found.') }}</span>
+                                    <span class="help-block">{{ _('By checking this you\'ll disable 3D Quanter warning you if no serial ports to connect to were found.') }}</span>
                                 </label>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                     <div class="controls">
                         <label class="checkbox">
                             <input type="checkbox" data-bind="checked: serial_log" id="settings-serialLog"> {{ _('Log communication to <code>serial.log</code>') }} <span class="label label-important">{{ _('Warning') }}</span>
-                            <span class="help-block">{{ _('While this can negatively impact performance, a <code>serial.log</code> can be incredibly useful for debugging any issues observed in the communication between OctoPrint and your printer.') }}</span>
+                            <span class="help-block">{{ _('While this can negatively impact performance, a <code>serial.log</code> can be incredibly useful for debugging any issues observed in the communication between 3D Quanter and your printer.') }}</span>
                         </label>
                     </div>
                 </div>
@@ -279,7 +279,7 @@
                         <label class="checkbox">
                             <input type="checkbox" data-bind="checked: serial_firmwareDetection" id="settings-serialFirmwareDetection"> {{ _('Enable automatic firmware detection') }}
                             <span class="help-block">{% trans %}
-                                If enabled, OctoPrint will try to figure out your printer's firmware automatically and adjust some communication parameters based on that.
+                                If enabled, 3D Quanter will try to figure out your printer's firmware automatically and adjust some communication parameters based on that.
                                 If that doesn't work out, or you want more granular control, uncheck this and the parameters in question will become visible for you to adjust.
                             {% endtrans %}</span>
                         </label>
@@ -457,7 +457,7 @@
                     <div class="controls">
                         <label class="checkbox">
                             <input type="checkbox" data-bind="checked: serial_waitForStart" id="settings-serialWaitForStart"> {{ _('Wait for <code>start</code> on connect') }}
-                            <span class="help-block">{{ _('Try checking this if you run into connection timeouts due to your printer taking too long to respond to OctoPrint\'s handshake attempts on connect.') }}</span>
+                            <span class="help-block">{{ _('Try checking this if you run into connection timeouts due to your printer taking too long to respond to 3D Quanter\'s handshake attempts on connect.') }}</span>
                         </label>
                     </div>
                     <div class="controls">
@@ -485,7 +485,7 @@
                     <label class="control-label" for="settings-serialPausingCommands">{{ _('Pausing commands') }}</label>
                     <div class="controls">
                         <input type="text" class="input-block-level" id="settings-serialPausingCommands" data-bind="value: serial_pausingCommands">
-                        <span class="help-inline">{{ _('Use this to specify commands on which OctoPrint should pause the print job. Just the G or M code, comma separated. Defaults to <code>M0</code>, <code>M1</code> and <code>M25</code>.') }}</span>
+                        <span class="help-inline">{{ _('Use this to specify commands on which 3D Quanter should pause the print job. Just the G or M code, comma separated. Defaults to <code>M0</code>, <code>M1</code> and <code>M25</code>.') }}</span>
                     </div>
                 </div>
                 <div class="control-group">
@@ -541,7 +541,7 @@
                 <div class="controls">
                     <label class="checkbox">
                         <input type="checkbox" data-bind="checked: serial_enableShutdownActionCommand" id="settings-serialEnableShutdownActionCommand"> {{ _('Enable the <code>shutdown</code> action command') }}
-                        <span class="help-block">{{ _('If enabled and the system shutdown command is configured, your printer\'s firmware will be able to shutdown your OctoPrint server via an action command on the serial connection. This could get abused, so only enable this if you trust your firmware and your GCODE files!') }}</span>
+                        <span class="help-block">{{ _('If enabled and the system shutdown command is configured, your printer\'s firmware will be able to shutdown your 3D Quanter server via an action command on the serial connection. This could get abused, so only enable this if you trust your firmware and your GCODE files!') }}</span>
                     </label>
                 </div>
             </fieldset>
@@ -557,7 +557,7 @@
                         </label>
                         <label class="radio">
                             <input type="radio" name="errorHandlingGroup" value="cancel" data-bind="checked: serial_serialErrorBehaviour" id="settings-serialErrorBehaviourCancel"> {{ _('Cancel any ongoing prints but stay connected to the printer') }} <span></span>
-                            <span class="help-block">{{ _('Please note that if you choose this, OctoPrint will still disconnect from the printer in case of <em>fatal</em> errors reported by your firmware (e.g. <code>kill() called</code>, <code>fatal:</code>).') }}</span>
+                            <span class="help-block">{{ _('Please note that if you choose this, 3D Quanter will still disconnect from the printer in case of <em>fatal</em> errors reported by your firmware (e.g. <code>kill() called</code>, <code>fatal:</code>).') }}</span>
                         </label>
                         <label class="radio">
                             <input type="radio" name="errorHandlingGroup" value="ignore" data-bind="checked: serial_serialErrorBehaviour" id="settings-serialErrorBehaviourIgnore"> {{ _('Ignore') }} <span class="label label-important">{{ _('Warning') }}</span>
@@ -568,7 +568,7 @@
                 <div class="controls">
                     <label class="checkbox">
                         <input type="checkbox" data-bind="checked: serial_sendM112OnError" id="settings-serialSendM112OnError"> {{ _('Send <code>M112</code> on disconnect due to error') }}
-                        <span class="help-block">{{ _('If this is checked, OctoPrint will try to send an <code>M112</code> prior to a disconnect due to a (fatal) error in order to disable heaters and motors.') }}</span>
+                        <span class="help-block">{{ _('If this is checked, 3D Quanter will try to send an <code>M112</code> prior to a disconnect due to a (fatal) error in order to disable heaters and motors.') }}</span>
                     </label>
                 </div>
             </fieldset>
@@ -601,7 +601,7 @@
                 <div class="controls">
                     <label class="checkbox">
                         <input type="checkbox" data-bind="checked: serial_sanityCheckTools" id="settings-sanityCheckTools"> {{ _('Sanity check tool commands') }}  <span class="label label-important">{{ _('Warning') }}</span>
-                        <span class="help-block">{{ _('If enabled, OctoPrint will not send tool commands to your printer that exceed the number of extruders configured in the active printer profile, or for which the firmware has reported an "invalid extruder" error. Only uncheck this if OctoPrint or your firmware mistakingly mark valid tools as invalid and be sure to investigate the reason for that, it might be a misconfiguration you need to correct for proper operation.') }}</span>
+                        <span class="help-block">{{ _('If enabled, 3D Quanter will not send tool commands to your printer that exceed the number of extruders configured in the active printer profile, or for which the firmware has reported an "invalid extruder" error. Only uncheck this if 3D Quanter or your firmware mistakingly mark valid tools as invalid and be sure to investigate the reason for that, it might be a misconfiguration you need to correct for proper operation.') }}</span>
                     </label>
                 </div>
                 <div class="control-group">

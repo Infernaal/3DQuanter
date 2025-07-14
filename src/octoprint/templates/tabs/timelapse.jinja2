@@ -26,7 +26,7 @@
                         <input type="number" min="1" class="input-mini" id="webcam_timelapse_minDelay" data-bind="value: timelapseMinDelay, valueUpdate: 'afterkeydown', enable: !isPrinting()">
                         <span class="add-on">{{ _('sec') }}</span>
                     </div>
-                    <span class="help-block">{{ _('OctoPrint will rate limit snapshots to this minimum interval. This it to prevent against performance issues with vase mode/continuous z prints.') }}</span>
+                    <span class="help-block">{{ _('3D Quanter will rate limit snapshots to this minimum interval. This it to prevent against performance issues with vase mode/continuous z prints.') }}</span>
                 </div>
             </div>
 
@@ -57,7 +57,7 @@
                         <input type="number" min="0" class="input-mini" id="webcam_timelapse_postRoll" data-bind="value: timelapsePostRoll, valueUpdate: 'afterkeydown', enable: !isPrinting() && timelapseTypeSelected()">
                         <span class="add-on">{{ _('sec') }}</span>
                     </div>
-                    <span class="help-block">{{ _('OctoPrint will use the final picture to add this many seconds to the end of your rendered timelapse.') }}</span>
+                    <span class="help-block">{{ _('3D Quanter will use the final picture to add this many seconds to the end of your rendered timelapse.') }}</span>
                 </div>
             </div>
 
@@ -104,7 +104,7 @@
     </div>
     <div class="alert" style="display: none" data-bind="visible: !canSnapshot() || !settings.webcam_ffmpegPath()">
         <p><strong>{{ _('Timelapse not fully configured') }}</strong></p>
-        <p data-bind="visible: !loginState.isAdmin()">{{ _('A working snapshot setup and/or the path to FFMPEG are missing. To have this fixed, get in touch with an administrator of this OctoPrint instance.') }}</p>
+        <p data-bind="visible: !loginState.isAdmin()">{{ _('A working snapshot setup and/or the path to FFMPEG are missing. To have this fixed, get in touch with an administrator of this 3D Quanter instance.') }}</p>
         <p data-bind="visible: loginState.isAdmin">{{ _('A working snapshot setup and/or the path to FFMPEG are missing. You can change both under "Settings" > "Webcam & Timelapse" and in the settings of your chosen webcam plugin. If you don\'t have a webcam or don\'t want to enable timelapse support you can also just disable it there.') }}</p>
         <p data-bind="visible: loginState.isUser"><small>
             <!-- ko if: canSnapshot -->

@@ -2,9 +2,9 @@
     <p>
         <strong>{{ _('Security Advice: ') }}</strong>
         {% trans %}
-            Please note that OctoPrint merely embeds a webcam stream & accesses a snapshot URL. It does not actually run its own webcam server
+            Please note that 3D Quanter merely embeds a webcam stream & accesses a snapshot URL. It does not actually run its own webcam server
             or interact directly with your camera. It thus can't impose access restrictions on it or enable/disable the stream for you. The
-            stream might be accessible for everyone who can connect to your OctoPrint instance, even unauthenticated.
+            stream might be accessible for everyone who can connect to your 3D Quanter instance, even unauthenticated.
         {% endtrans %}
     </p>
     <p>
@@ -12,7 +12,7 @@
     </p>
     <p>
         {% trans %}
-            And as always: Do not directly expose your OctoPrint instance on the public internet or any other hostile networks!
+            And as always: Do not directly expose your 3D Quanter instance on the public internet or any other hostile networks!
         {% endtrans %}
     </p>
 </div>
@@ -48,13 +48,13 @@
 {% trans %}<p>
     Select the webcam to fall back on to populate the stream and snapshot URLs on the settings
     API used by old clients that do not yet utilize the webcam plugin
-    system introduced in OctoPrint 1.9.0. If the selected webcam does not
+    system introduced in 3D Quanter 1.9.0. If the selected webcam does not
     provide a snapshot or stream URL, it won't be available on the settings API and thus
     to older clients.
 </p>
 <p>
     Note that this does not affect the webcam stream options available
-    in OctoPrint's core UI, nor the snapshot camera used for timelapse recordings.
+    in 3D Quanter's core UI, nor the snapshot camera used for timelapse recordings.
     It is exclusively relevant for the compatibility layer provided on the settings API.
 </p>{% endtrans %}
 

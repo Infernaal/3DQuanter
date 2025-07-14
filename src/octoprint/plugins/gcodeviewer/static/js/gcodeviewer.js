@@ -58,6 +58,7 @@ $(function () {
         self.renderer_centerModel = ko.observable(false);
         self.renderer_centerViewport = ko.observable(false);
         self.renderer_zoomOnModel = ko.observable(false);
+        self.renderer_zoomOnModel(false);
         self.renderer_showMoves = ko.observable(true);
         self.renderer_showRetracts = ko.observable(true);
         self.renderer_showPrinthead = ko.observable(true);
@@ -151,7 +152,7 @@ $(function () {
         // subscribe to update Gcode view on updates...
         self.renderer_centerModel.subscribe(self.rendererOptionUpdated);
         self.renderer_centerViewport.subscribe(self.rendererOptionUpdated);
-        self.renderer_zoomOnModel.subscribe(self.rendererOptionUpdated);
+        // self.renderer_zoomOnModel.subscribe(self.rendererOptionUpdated);
         self.renderer_showMoves.subscribe(self.rendererOptionUpdated);
         self.renderer_showRetracts.subscribe(self.rendererOptionUpdated);
         self.renderer_showPrinthead.subscribe(self.rendererOptionUpdated);
@@ -503,6 +504,9 @@ $(function () {
                     event.preventDefault();
                 }
             });
+            containerElement.on("wheel", function (event) {
+                event.preventDefault(); // блокирует зум колесиком
+            }, { passive: false });
         };
 
         self.loadFile = function (path, date, size, force) {

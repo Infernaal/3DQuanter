@@ -1336,14 +1336,6 @@ def fetch_template_data(refresh=False):
                 "custom_bindings": False,
             },
         ),
-        "supporters": (
-            "Supporters",
-            {
-                "template": "dialogs/about/supporters.jinja2",
-                "_div": "about_sponsors",
-                "custom_bindings": False,
-            },
-        ),
         "systeminfo": (
             "System Information",
             {

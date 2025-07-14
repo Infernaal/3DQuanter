@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html data-octoprint-version="{{ version.base|e }}">
     <head>
-        <title data-bind="text: title">OctoPrint</title>
+        <title data-bind="text: title">3D Quanter</title>
 
         <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
         <link rel="shortcut icon" href="{{ url_for('static', filename='img/tentacle-32x32.png') }}">
@@ -9,7 +9,7 @@
         <link rel="mask-icon-theme" href="{{ url_for('static', filename='img/mask-theme.svg') }}" color="#56BE37">
         <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='img/apple-touch-icon-114x114.png') }}">
         <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='img/apple-touch-icon-144x144.png') }}">
-
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <meta name="robots" content="noindex, nofollow, noimageindex">
         <meta name="referrer" content="no-referrer">
         <meta name="theme-color" data-bind="attr: { content: theme_color }">
@@ -17,7 +17,58 @@
         {% include 'javascripts-preload.jinja2' %}
         {% include 'stylesheets-preload.jinja2' %}
         {% include 'initscript.jinja2' %}
-    </head>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container.octoprint-container {
+    max-width: none;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.octoprint-container .row {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+#sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 650px;
+    flex-shrink: 0;
+}
+
+#sidebar .accordion-group {
+    margin-bottom: 0 !important;
+}
+
+.tabbable {
+    flex: 1 1 auto;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 14px;
+    background: #f1f1f1;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+</style></head>
     <body>
         <noscript>
             <style type="text/css">
@@ -32,7 +83,7 @@
                         <div class="inner">
                             <div class="content">
                                 <h1 class="text-error">{{ _('You don\'t seem to have JavaScript enabled') }}</h1>
-                                {{ _('OctoPrint\'s UI requires JavaScript to work. Please enable JavaScript and reload.') }}
+                                {{ _('3D Quanter\'s UI requires JavaScript to work. Please enable JavaScript and reload.') }}
                             </div>
                         </div>
                     </div>
@@ -46,7 +97,7 @@
                 <div class="outer">
                     <div class="inner">
                         <div class="content">
-                            <h1 id="page-container-loading-header">{{ _('Connecting to OctoPrint\'s server...') }}</h1>
+                            <h1 id="page-container-loading-header">{{ _('Connecting to 3D Quanter\'s server...') }}</h1>
                             <p><i id="page-container-loading-spinner" class="fas fa-spinner fa-spin fa-4x"></i></p>
                             <p id="page-container-loading-error" style="display: none"></p>
                         </div>
@@ -61,7 +112,9 @@
             <div id="navbar" class="navbar navbar-static-top" aria-label="Navigation">
                 <div class="navbar-inner" data-bind="css: appearanceClasses">
                     <div class="container">
-                        <a class="brand" href="javascript:void(0)" data-bind="attr: {title: appearance.fullbrand}"><span data-bind="text: appearance.brand">OctoPrint</span></a>
+                        <a class="brand">
+                           <img src="{{ url_for('static', filename='img/3d_logo.png') }}" alt="3D Quanter Logo" style="max-width: 70px; height: auto;">
+                        </a>
                         <div class="nav-collapse">
                             <!-- Navbar -->
                             <ul class="nav pull-right">
@@ -86,8 +139,7 @@
                 <div class="row">
                     <!-- Sidebar -->
                     {% if templates.sidebar.order %}
-                    <div id="sidebar" class="accordion {% if templates.tab.order %}span4{% else %}span12{% endif %}" aria-label="Sidebar">
-                        {% for key in templates.sidebar.order %}
+                    <div id="sidebar" class="accordion custom-grid {% if templates.tab.order %}span4{% else %}span12{% endif %}" aria-label="Sidebar">                        {% for key in templates.sidebar.order %}
                             {% set entry, data = templates.sidebar.entries[key] %}
                             {% if "custom_bindings" not in data or data["custom_bindings"] %}<!-- ko allowBindings: false -->{% endif %}
                             <div id="{{ data._div }}_wrapper"
@@ -131,7 +183,7 @@
                     {% if templates.tab.order %}
                     <div class="tabbable {% if templates.sidebar.order %}span8{% else %}span12{% endif %}" aria-label="Tabs">
                         <ul class="nav nav-tabs" id="tabs" role="tablist">
-                            {% for key in templates.tab.order %}
+                            {% for key in templates.tab.order if key not in ['temperature', 'control', 'timelapse'] %}
                                 {% set entry, data = templates.tab.entries[key] %}
                                 {% if "custom_bindings" not in data or data["custom_bindings"] %}<!-- ko allowBindings: false -->{% endif %}
                                 <li role="tab" id="{{ data._div }}_link"
@@ -162,9 +214,8 @@
                     </div>
                     {% endif %}
                 </div>
-                {%  include 'footer.jinja2' %}
+		{%  include 'footer.jinja2' %}
             </div>
-
             <!-- Dialogs -->
             {% include 'dialogs/settings.jinja2' %}
             {% include 'dialogs/slicing.jinja2' %}
@@ -173,7 +224,7 @@
             {% include 'dialogs/about.jinja2' %}
             {% include 'dialogs/files.jinja2' %}
             {% include 'dialogs/temperature.jinja2' %}
-            {% include 'dialogs/timelapse.jinja2' %}
+            {% include 'dialogs/timelapse.jinja2' %}            
             {% include 'dialogs/firmwareerror.jinja2' %}
             {% include 'dialogs/reauthenticate.jinja2' %}
             <!-- End of dialogs -->

@@ -1087,7 +1087,7 @@ $(function () {
                 // we are now connected to the server and need to change the loading message - jquery instead of
                 // binding because no bindings yet
                 $("#page-container-loading-header").html(
-                    gettext("Loading OctoPrint's UI, please wait...")
+                    gettext("Loading 3D Quanter's UI, please wait...")
                 );
 
                 // perform passive login first

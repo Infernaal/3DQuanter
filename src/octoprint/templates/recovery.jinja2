@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>OctoPrint Recovery</title>
+    <title>3D Quanter Recovery</title>
 
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/tentacle-32x32.png') }}">
     <link rel="mask-icon" href="{{ url_for('static', filename='img/mask.svg') }}" color="#56BE37">
@@ -50,7 +50,7 @@
 <body>
     <div id="navbar" class="navbar navbar-inverse navbar-static-top">
         <div class="navbar-inner">
-            <span class="brand">OctoPrint Recovery</span>
+            <span class="brand">3D Quanter Recovery</span>
             <ul class="nav pull-right">
                 <li><p class="navbar-text">Logged in as <strong data-bind="text: username"></strong> (<a href="javascript:void(0)" data-bind="click: logout">Logout</a>)</p></li>
             </ul>
@@ -143,7 +143,7 @@
                     <p data-bind="visible: backups().length > 0">
                         <strong>{{ _("Note:") }}</strong>
                         {% trans marker="<strong class='text-error'>!</strong>"|safe %}
-                            OctoPrint currently only allows uploading backups of a maximum size of
+                            3D Quanter currently only allows uploading backups of a maximum size of
                             {{ plugin_backup_max_upload_size_str }} via the UI. Backups larger than this can only be restored by command line,
                             or by adjusting the size by removing large contents (like timelapses) from the
                             zip prior to uploading. Backups exceeding this size limit are marked with a
