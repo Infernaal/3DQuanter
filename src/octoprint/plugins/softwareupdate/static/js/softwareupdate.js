@@ -627,12 +627,12 @@ $(function () {
                     singleButtonNotify = true;
                 }
 
-                if (
+                /* if (
                     (ignoreSeen || !self._hasNotificationBeenSeen(data.information)) &&
                     !OctoPrint.coreui.wizardOpen
                 ) {
                     self._showPopup(options, eventListeners, singleButtonNotify);
-                }
+                } */
             } else if (data.status === "current") {
                 if (showIfNothingNew) {
                     self._showPopup({

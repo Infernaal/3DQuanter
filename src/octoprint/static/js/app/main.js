@@ -1,6 +1,5 @@
 $(function () {
     OctoPrint = window.OctoPrint;
-
     // show page loading overlay (if enabled)
     $("#page-container-loading").show();
 

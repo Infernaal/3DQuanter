@@ -512,18 +512,6 @@ class AchievementsPlugin(
     def get_template_configs(self):
         return [
             {
-                "type": "about",
-                "name": gettext("Achievements"),
-                "template": "achievements_about_achievements.jinja2",
-                "custom_bindings": True,
-            },
-            {
-                "type": "about",
-                "name": gettext("Instance Stats"),
-                "template": "achievements_about_stats.jinja2",
-                "custom_bindings": True,
-            },
-            {
                 "type": "settings",
                 "name": gettext("Achievements"),
                 "template": "achievements_settings.jinja2",

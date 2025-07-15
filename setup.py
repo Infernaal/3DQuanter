@@ -322,7 +322,6 @@ def get_cmdclass(cmdclass):
         {
             "octoprint/templates/_data": [
                 "AUTHORS.md",
-                "SUPPORTERS.md",
                 "THIRDPARTYLICENSES.md",
             ]
         },

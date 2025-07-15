@@ -80,43 +80,7 @@ class AnnouncementPlugin(
 
     def get_settings_defaults(self):
         settings = {
-            "channels": {
-                "_important": {
-                    "name": "Important Announcements",
-                    "description": "Important announcements about OctoPrint.",
-                    "priority": 1,
-                    "type": "rss",
-                    "url": "https://octoprint.org/feeds/important.xml",
-                },
-                "_releases": {
-                    "name": "Release Announcements",
-                    "description": "Announcements of new releases and release candidates of OctoPrint.",
-                    "priority": 2,
-                    "type": "rss",
-                    "url": "https://octoprint.org/feeds/releases.xml",
-                },
-                "_blog": {
-                    "name": "On the OctoBlog",
-                    "description": "Development news, community spotlights, OctoPrint On Air episodes and more from the official OctoBlog.",
-                    "priority": 2,
-                    "type": "rss",
-                    "url": "https://octoprint.org/feeds/octoblog.xml",
-                },
-                "_plugins": {
-                    "name": "New Plugins in the Repository",
-                    "description": "Announcements of new plugins released on the official Plugin Repository.",
-                    "priority": 2,
-                    "type": "rss",
-                    "url": "https://plugins.octoprint.org/feed.xml",
-                },
-                "_octopi": {
-                    "name": "OctoPi News",
-                    "description": "News around OctoPi, the Raspberry Pi image including OctoPrint.",
-                    "priority": 2,
-                    "type": "rss",
-                    "url": "https://octoprint.org/feeds/octopi.xml",
-                },
-            },
+            "channels": {},
             "enabled_channels": [],
             "forced_channels": ["_important"],
             "channel_order": ["_important", "_releases", "_blog", "_plugins", "_octopi"],

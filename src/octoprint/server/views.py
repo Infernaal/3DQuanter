@@ -1305,7 +1305,7 @@ def fetch_template_data(refresh=False):
 
     templates["about"]["entries"] = {
         "about": (
-            "About OctoPrint",
+            "About 3D Quanter",
             {
                 "template": "dialogs/about/about.jinja2",
                 "_div": "about_about",
@@ -1313,7 +1313,7 @@ def fetch_template_data(refresh=False):
             },
         ),
         "license": (
-            "OctoPrint License",
+            "3D Quanter License",
             {
                 "template": "dialogs/about/license.jinja2",
                 "_div": "about_license",
@@ -1326,24 +1326,6 @@ def fetch_template_data(refresh=False):
                 "template": "dialogs/about/thirdparty.jinja2",
                 "_div": "about_thirdparty",
                 "custom_bindings": False,
-            },
-        ),
-        "authors": (
-            "Authors",
-            {
-                "template": "dialogs/about/authors.jinja2",
-                "_div": "about_authors",
-                "custom_bindings": False,
-            },
-        ),
-        "systeminfo": (
-            "System Information",
-            {
-                "template": "dialogs/about/systeminfo.jinja2",
-                "_div": "about_systeminfo",
-                "custom_bindings": False,
-                "styles": ["display: none;"],
-                "data_bind": "visible: loginState.hasPermissionKo(access.permissions.SYSTEM)",
             },
         ),
     }

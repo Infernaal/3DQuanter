@@ -351,17 +351,6 @@ class PluginManagerPlugin(
 
     def get_template_configs(self):
         return [
-            {
-                "type": "settings",
-                "name": gettext("Plugin Manager"),
-                "template": "pluginmanager_settings.jinja2",
-                "custom_bindings": True,
-            },
-            {
-                "type": "about",
-                "name": "Plugin Licenses",
-                "template": "pluginmanager_about.jinja2",
-            },
         ]
 
     def get_template_vars(self):
@@ -2445,7 +2434,6 @@ __plugin_description__ = "Allows installing and managing OctoPrint plugins"
 __plugin_license__ = "AGPLv3"
 __plugin_pythoncompat__ = ">=3.7,<4"
 __plugin_hidden__ = True
-
 
 def __plugin_load__():
     global __plugin_implementation__

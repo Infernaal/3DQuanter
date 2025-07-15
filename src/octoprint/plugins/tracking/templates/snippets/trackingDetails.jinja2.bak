@@ -1,0 +1,4 @@
+<p>{% trans %}
+    For details on what gets tracked, please refer to <a href="https://tracking.3dquanter.org" target="_blank" rel="noopener noreferrer">tracking.octoprint.org</a>
+    and also the <a href="https://tracking.3dquanter.org/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy at tracking.3dquanter.org</a>.
+{% endtrans %}</p>

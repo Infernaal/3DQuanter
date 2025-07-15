@@ -1,0 +1,29 @@
+<h3>{{ _('3D Quanter') }}</h3>
+
+<h4>{{ _('The snappy web interface for 3D printer') }}</h4>
+
+<p>Version <span class="version">{{ display_version|e }}</span></p>
+
+<ul class="fa-ul">
+    <li><i class="fa-li fab fa-github"></i> Source Code: <a href="https://github.com/Infernaal/3DQuanter" target="_blank" rel="noreferrer noopener">github.com/Infernaal/3DQuanter</a></li>
+</ul>
+
+<p>
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+</p>
+
+<p>
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+</p>
+
+<p>
+    3D Quanter by Octoprint Engine also utilizes various dependencies under terms of their
+    respective licenses, which can be found under <a href="javascript:void(0)" data-bind="click: function() { showTab('{{ templates.about.entries.thirdparty[1]._div }}'); }">{{ templates.about.entries.thirdparty[0] }}</a> to
+    the left. Copyright of those dependencies lies with their respective authors
+</p>

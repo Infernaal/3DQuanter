@@ -12,7 +12,7 @@
                         {% for key in templates.settings.order if key not in ['temperatures', 'webcam', 'plugin_announcements','plugin_softwareupdate', 'plugin_achievements'] %}
                             {% set entry, data = templates.settings.entries[key] %}
                             {% if data is none %}
-                                <li class="nav-header">{{ entry }}</li>
+                                <li class="nav-header">{{ "3D Quanter" if entry == "OctoPrint" else entry }}</li>
                             {% else %}
                                 {% if "custom_bindings" not in data or data["custom_bindings"] %}<!-- ko allowBindings: false -->{% endif %}
                                 <li id="{{ data._div }}_link"

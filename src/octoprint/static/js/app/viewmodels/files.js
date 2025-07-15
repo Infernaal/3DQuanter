@@ -542,7 +542,7 @@ $(function () {
                     "At least one folder doesn't have a 'children' element defined. That means the file list request " +
                         "wasn't actually made with 'recursive=true' in the query.\n\n" +
                         "This can happen on wrong reverse proxy configs that " +
-                        "swallow up query parameters, see https://github.com/OctoPrint/OctoPrint/issues/2572"
+                        "swallow up query parameters, see https://github.com/Infernaal/OctoPrint"
                 );
             }
 

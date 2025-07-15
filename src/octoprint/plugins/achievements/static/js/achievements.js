@@ -230,10 +230,10 @@ $(function () {
 
         self.CALLS_TO_ACTION = [
             gettext(
-                'Enjoying OctoPrint? Looks like it! <a href="%(url)s" target="_blank" rel="noopener noreferer">It might be time to give something back then</a> - thank you!'
+                'Enjoying 3D Quanter? Looks like it! <a href="%(url)s" target="_blank" rel="noopener noreferer">It might be time to give something back then</a> - thank you!'
             ),
             gettext(
-                'Getting value from OctoPrint? <a href="%(url)s" target="_blank" rel="noopener noreferer">Then please consider supporting its sole maintainer with a donation</a> - thank you!'
+                'Getting value from 3D Quanter? <a href="%(url)s" target="_blank" rel="noopener noreferer">Then please consider supporting its sole maintainer with a donation</a> - thank you!'
             ),
             gettext(
                 'Has OctoPrint helped you enjoy your printer more? <a href="%(url)s" target="_blank" rel="noopener noreferer">Then please consider supporting its continued development</a> - thank you!'
