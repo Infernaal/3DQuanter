@@ -1,4 +1,4 @@
-<p align="center"><img src="https://octoprint.org/assets/img/logo.png" alt="OctoPrint's logo" /></p>
+<p align="center"><img src="https://media.licdn.com/dms/image/v2/D4E0BAQHuQFfyvsorKw/company-logo_200_200/company-logo_200_200/0/1682060102088?e=1755734400&v=beta&t=MVZye2njDk0RWP34AUa_Ld2O6BYV1MK_xEoC1gl_si0" alt="OctoPrint's logo" /></p>
 
 <h1 align="center">OctoPrint</h1>
 
