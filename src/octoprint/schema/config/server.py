@@ -91,7 +91,7 @@ class OnlineCheckConfig(BaseModel):
     port: int = 53
     """DNS port against which to check, defaults to the standard DNS port."""
 
-    name: str = "octoprint.org"
+    name: str = "google.com"
     """Host name for which to check name resolution, defaults to OctoPrint's main domain."""
 
 
