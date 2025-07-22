@@ -6967,7 +6967,7 @@ def upload_cli():
     target = sys.argv[4]
 
     # init settings & plugin manager
-    settings(init=True)
+    settings(init=True, basedir=os.path.expanduser("~/.3dquanter"))
     octoprint.plugin.plugin_manager(init=True)
 
     # create dummy callback
