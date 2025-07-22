@@ -16,7 +16,7 @@
     <p>{{ _('There are no backups. Maybe create one below?') }}</p>
 </div>
 <div data-bind="visible: backups.allSize() > 0">
-    <p>{{ _('These are the backups of your settings and files that already exist on this OctoPrint instance. You may delete, download or restore them.') }}</p>
+    <p>{{ _('These are the backups of your settings and files that already exist on this 3D Quanter instance. You may delete, download or restore them.') }}</p>
 
     <div class="pull-left">
         <div class="btn-group">
@@ -65,7 +65,7 @@
     <p>
         <strong>{{ _("Note:") }}</strong>
         {% trans marker="<i class='fa fa-warning text-error'></i>"|safe %}
-            OctoPrint currently only allows uploading backups of a maximum size of
+            3D Quanter currently only allows uploading backups of a maximum size of
             {{ plugin_backup_max_upload_size_str }} via the UI. Backups larger than this can only be restored by command line,
             or by adjusting the size by removing large contents (like timelapses) from the
             zip prior to uploading. Backups exceeding this size limit are marked with a
@@ -112,7 +112,7 @@
 </div>
 
 <div data-bind="visible: !restoreSupported()">
-    {{ _('Please note that the operating system that this OctoPrint server is running on does not support automatically restoring backups. You will have to <a href="%(url)s" target="_blank" rel="noopener noreferrer">restore your backups manually for now</a>.', url='https://faq.octoprint.org/manual-restore') }}
+    {{ _('Please note that the operating system that this 3D Quanter server is running on does not support automatically restoring backups. You will have to <a href="%(url)s" target="_blank" rel="noopener noreferrer">restore your backups manually for now</a>.', url='https://faq.octoprint.org/manual-restore') }}
 </div>
 
 <div id="settings_plugin_backup_restoredialog" class="modal hide fade">
