@@ -284,7 +284,7 @@ $(function () {
         self.server_onlineCheck_interval = ko.observable();
         self.server_onlineCheck_host = ko.observable();
         self.server_onlineCheck_port = ko.observable();
-        self.server_onlineCheck_name = ko.observable();
+        self.server_onlineCheck_name = ko.observable("google.com");
 
         self.server_pluginBlacklist_enabled = ko.observable();
         self.server_pluginBlacklist_url = ko.observable();
