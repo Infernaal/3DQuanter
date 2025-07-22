@@ -312,7 +312,7 @@ def init_logging(
                     "when": "D",
                     "backupCount": 6,
                     "filename": os.path.join(
-                        settings.getBaseFolder("logs"), "octoprint.log"
+                        settings.getBaseFolder("logs"), "3dquanter.log"
                     ),
                 },
                 "serialFile": {
