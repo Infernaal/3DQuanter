@@ -3,8 +3,8 @@
     <pre id="terminal-output-lowfi" style="display: none" class="pre-scrollable" data-bind="text: plainLogOutput, visible: !fancyFunctionality()"></pre>
     <div id="terminal-sendpanel" style="display: none;" data-bind="visible: loginState.hasPermissionKo(access.permissions.CONTROL)">
         <div class="input-block-level input-append">
-            <input type="text" id="terminal-command" data-bind="value: command, event: { keyup: function(d,e) { return handleKeyUp(e); }, keydown: function(d,e) { return handleKeyDown(e); } }, enable: isOperational() && loginState.isUser()" autocomplete="off">
-            <a class="btn add-on" id="terminal-send" data-bind="click: sendCommand, enable: isOperational() && loginState.isUser()">{{ _('Send') }}</a>
+            <input type="text" class="terminal-inp" id="terminal-command" data-bind="value: command, event: { keyup: function(d,e) { return handleKeyUp(e); }, keydown: function(d,e) { return handleKeyDown(e); } }, enable: isOperational() && loginState.isUser()" autocomplete="off">
+	    <a class="btn add-on" id="terminal-send" style="height:26px;line-height:26px;padding:0 12px;font-size:14px;vertical-align:middle;" data-bind="click: sendCommand, enable: isOperational() && loginState.isUser()">{{ _('Send') }}</a>
         </div>
     </div>
     <small id="terminal-autoscroll-panel" class="pull-left" data-bind="visible: fancyFunctionality()">
@@ -14,7 +14,8 @@
     </small>
     <small id="terminal-actions-panel" class="pull-right">
         <a href="javascript:void(0)" data-bind="click: copyAll"><i class="fas fa-copy terminal-copy-all" title="{{ _('Copy all')|edq }}"></i> {{ _('Copy all') }}</a><br>
-        <a href="javascript:void(0)" data-bind="click: clearAllLogs"><i class="far fa-trash-alt terminal-clear-logs" title="{{ _('Clear log window')|edq }}"></i> {{ _('Clear all') }}</a>
+        <a href="javascript:void(0)" data-bind="click: clearAllLogs"><i class="far fa-trash-alt terminal-clear-logs" title="{{ _('Clear log window')|edq }}"></i> {{ _('Clear all') }}</a><br>
+        <a href="#infoModal" data-toggle="modal"><i class="fas fa-info-circle"></i> {{ _('Force Info') }}</a>
     </small>
     <small id="terminal-limited-functionality-panel" class="pull-left text-warning" data-bind="visible: !fancyFunctionality()" style="display: none">
         {{ _('For performance reasons only a limited amount of terminal functionality is enabled right now.') }}
@@ -42,7 +43,20 @@
         <p class="row-fluid">
             <button class="btn btn-danger span6" type="button" data-bind="toggle: forceFancyFunctionality">{{ _('Force fancy functionality') }}</button>
             <button class="btn btn-danger span6" type="button" data-bind="toggle: forceTerminalLogDuringPrinting">{{ _('Force terminal output during printing') }}</button>
-            <small class="muted">{{ _("Some functionality of the terminal will be disabled if 3D Quanter detects that your browser is too slow for that. You may force it back on here, but be aware that this might make your browser unresponsive.") }}</small>
         </p>
     </div>
+</div>
+
+<div id="infoModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3 id="infoModalLabel">{{ _('Force Button Info') }}</h3>
+  </div>
+  <div class="modal-body">
+    <p class="row-fluid">
+	<small class="muted">
+          {{ _("Some functionality of the terminal will be disabled if 3D Quanter detects that your browser is too slow for that. You may force it back on here, but be aware that this might make your browser unresponsive.") }}
+        </small>
+    </p>
+  </div>
 </div>

@@ -688,6 +688,11 @@ cite {
 	color: #999
 }
 
+small.muted.hint {
+    position: relative;
+    top: -20px;
+}
+
 a.muted:hover {
 	color: #808080
 }
@@ -1696,7 +1701,7 @@ select:focus:invalid:focus {
 	width: auto;
 	height: 20px;
 	min-width: 16px;
-	padding: 4px 5px;
+	padding: 12px 5px;
 	font-size: 14px;
 	font-weight: normal;
 	line-height: 20px;
@@ -1741,7 +1746,8 @@ select:focus:invalid:focus {
 .input-append .uneditable-input {
 	-webkit-border-radius: 4px 0 0 4px;
 	-moz-border-radius: 4px 0 0 4px;
-	border-radius: 4px 0 0 4px
+	border-radius: 4px 0 0 4px;
+        height: 36px;
 }
 
 .input-append input+.btn-group .btn:last-child,
@@ -5864,7 +5870,7 @@ a.badge:hover {
 }
 
 .accordion-inner {
-	padding: 9px 15px;
+	padding: 4px 15px;
 	border-top: 1px solid #e5e5e5
 }
 
