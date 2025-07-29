@@ -108,6 +108,7 @@
         </div>
     </div>
 </div>
+<div class="jog-panel-row">
 <!-- Extrusion control panel -->
 <div id="control-jog-extrusion" class="jog-panel" style="display: none;" data-bind="visible: loginState.hasPermissionKo(access.permissions.CONTROL)() && tools().length > 0">
     <h1>Tool (E)</h1>
@@ -151,7 +152,7 @@
         <button class="btn btn-block control-box" data-bind="enable: isOperational(), click: function() { $root.sendCustomCommand({type:'command',command:'M106 S0'}) }">{{ _('Fan off') }}</button>
     </div>
 </div>
-
+</div>
 <!-- Container for custom controls -->
 <div id="control-jog-custom" style="clear: both; display: none;" data-bind="visible: loginState.hasPermissionKo(access.permissions.CONTROL), template: { name: $root.displayMode, foreach: controls }"></div>
 
